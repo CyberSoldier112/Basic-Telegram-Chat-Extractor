@@ -16,9 +16,9 @@ if not client.is_user_authorized():
     client.sign_in(phone, input('Enter the code: '))
 
 # Username from which you want to retrieve media history
-nick = input("Nick: ")
+Username = input("Username: ")
 
-folder = "{}_Archive".format(str(nick))
+folder = "{}_Archive".format(str(Username))
 
 os.mkdir(str(folder))
 os.mkdir(str(folder)+"\Videos")
@@ -26,7 +26,7 @@ os.mkdir(str(folder)+"\Gifs")
 os.mkdir(str(folder)+"\Photos")
 
 async def main():
-    async for message in client.iter_messages(nick):
+    async for message in client.iter_messages(Username):
         if message.video:
             path = await message.download_media(str(folder)+"\Videos")
             print('File saved to', path)
