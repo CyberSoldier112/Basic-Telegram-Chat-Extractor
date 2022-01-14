@@ -1,4 +1,3 @@
-import telebot
 from telethon.sync import TelegramClient
 from telethon.tl.types import InputPeerUser, InputPeerChannel
 import os
@@ -42,3 +41,4 @@ async def main():
 with client:
     client.loop.run_until_complete(main())
     print("Completed!")
+    
